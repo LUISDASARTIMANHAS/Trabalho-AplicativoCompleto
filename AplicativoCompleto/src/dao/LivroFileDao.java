@@ -4,11 +4,11 @@
  */
 package dao;
 
-import domain.ComparatorFilmePorCodigoCrescente;
+import domain.ComparatorLivroPorCodigoCrescente;
 import domain.ComparatorLivroPorCodigoDecrescente;
-import domain.ComparatorFilmePorGeneroCrescente;
-import domain.ComparatorFilmePorNomeCrescente;
-import domain.ComparatorFilmePorNomeDecrescente;
+import domain.ComparatorLivroPorGeneroCrescente;
+import domain.ComparatorLivroPorNomeCrescente;
+import domain.ComparatorLivroPorNomeDecrescente;
 import domain.ComparatorLivroPorGeneroDecrescente;
 import domain.Livro;
 import java.io.FileInputStream;
@@ -69,15 +69,15 @@ public class LivroFileDao {
     public Vector<Livro> obterLivros(String coluna, boolean crescente) throws FileNotFoundException, IOException, ClassNotFoundException {
         Vector<Livro> livros = this.obterLivros();
         if (coluna.equals("codigo")){
-            if (crescente) Collections.sort(livros, new ComparatorFilmePorCodigoCrescente());
+            if (crescente) Collections.sort(livros, new ComparatorLivroPorCodigoCrescente());
             else Collections.sort(livros, new ComparatorLivroPorCodigoDecrescente());
         }
         else if (coluna.equals("nome")){
-            if (crescente) Collections.sort(livros, new ComparatorFilmePorNomeCrescente());
-            else Collections.sort(livros, new ComparatorFilmePorNomeDecrescente());
+            if (crescente) Collections.sort(livros, new ComparatorLivroPorNomeCrescente());
+            else Collections.sort(livros, new ComparatorLivroPorNomeDecrescente());
         }
         else if (coluna.equals("genero")){
-            if (crescente) Collections.sort(livros, new ComparatorFilmePorGeneroCrescente());
+            if (crescente) Collections.sort(livros, new ComparatorLivroPorGeneroCrescente());
             else Collections.sort(livros, new ComparatorLivroPorGeneroDecrescente());
         }
         else if (coluna.equals("produtora")){
