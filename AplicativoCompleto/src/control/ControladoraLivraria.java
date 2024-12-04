@@ -6,16 +6,16 @@
 package control;
 
 import dao.*;
-import domain.Filme;
+import domain.Livro;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Vector;
 
 
-public class ControladoraFilmes {
-    private Vector<Filme> filmes;
+public class ControladoraLivraria {
+    private Vector<Livro> Livros;
     private int marcador;
-    FilmeFileDao filmeDao;
+    LivroFileDao LivrosDao;
     
     private String obterNomeColunaBanco(String coluna) {
         if (coluna.equals("Código"))
@@ -31,65 +31,65 @@ public class ControladoraFilmes {
         return "id";
     }
 
-    public ControladoraFilmes() {
-        this.filmeDao = new FilmeFileDao();
+    public ControladoraLivraria() {
+        this.LivrosDao = new LivroFileDao();
     }
     
-    private void atualizarFilme(Filme filme, Vector linha){
-        filme.setCodigo(linha.get(0).toString());
-        filme.setNome(linha.get(1).toString());
-        filme.setGenero(linha.get(2).toString());
-        filme.setProdutora(linha.get(3).toString());
-        filme.setDatacompra(linha.get(4).toString());       
+    private void atualizarLivro(Livro livro, Vector linha){
+        livro.setCodigo(linha.get(0).toString());
+        livro.setNome(linha.get(1).toString());
+        livro.setGenero(linha.get(2).toString());
+        livro.setProdutora(linha.get(3).toString());
+        livro.setDatacompra(linha.get(4).toString());       
     }
     
-    private Vector criarLinhaFilme(Filme filme) {
+    private Vector criarLinhaLivro(Livro livro) {
         Vector linha = new Vector();
-        linha.addElement(filme.getCodigo());
-        linha.addElement(filme.getNome());
-        linha.addElement(filme.getGenero());
-        linha.addElement(filme.getProdutora());
-        linha.addElement(filme.getDatacompra());
+        linha.addElement(livro.getCodigo());
+        linha.addElement(livro.getNome());
+        linha.addElement(livro.getGenero());
+        linha.addElement(livro.getProdutora());
+        linha.addElement(livro.getDatacompra());
         return linha;
     }
      
     
-    public void inserirNovoFilme(Vector linha) throws FileNotFoundException, IOException, ClassNotFoundException{
-        Filme filme = new Filme();
-        this.atualizarFilme(filme, linha);
-        this.filmes.add(filme);
-        filmeDao.salvarFilmes(this.filmes);
+    public void inserirNovoLivro(Vector linha) throws FileNotFoundException, IOException, ClassNotFoundException{
+        Livro livro = new Livro();
+        this.atualizarLivro(livro, linha);
+        this.Livros.add(livro);
+        LivrosDao.salvarLivros(this.Livros);
     }
     
     public void setMarcador(int marcador){
         this.marcador = marcador;
     }
 
-    public void alterarFilme(Vector linha) throws FileNotFoundException, IOException, ClassNotFoundException {
-        Filme filme = filmes.get(marcador);
-        this.atualizarFilme(filme, linha);
-        filmeDao.salvarFilmes(this.filmes);
+    public void alterarLivro(Vector linha) throws FileNotFoundException, IOException, ClassNotFoundException {
+        Livro livro = Livros.get(marcador);
+        this.atualizarLivro(livro, linha);
+        LivrosDao.salvarLivros(this.Livros);
     }
     
-    public void  excluirFilme() throws FileNotFoundException, IOException, ClassNotFoundException{
-        filmes.remove(marcador);
-        filmeDao.salvarFilmes(this.filmes);
+    public void  excluirLivro() throws FileNotFoundException, IOException, ClassNotFoundException{
+        Livros.remove(marcador);
+        LivrosDao.salvarLivros(this.Livros);
     }
     
-    private Vector<Filme> obterFilmes(String coluna, boolean crescente) throws FileNotFoundException, IOException, ClassNotFoundException{
+    private Vector<Livro> obterLivros(String coluna, boolean crescente) throws FileNotFoundException, IOException, ClassNotFoundException{
         String nomeColunaBanco = this.obterNomeColunaBanco(coluna);
-        filmes = filmeDao.obterFilmes(nomeColunaBanco, crescente);
-        return filmes; 
+        Livros = LivrosDao.obterLivros(nomeColunaBanco, crescente);
+        return Livros; 
     }
 
-    public Vector obterLinhasFilmes(String coluna, boolean crescente) throws FileNotFoundException, IOException, ClassNotFoundException {
-        Vector<Filme> filmes = obterFilmes(coluna, crescente);
+    public Vector obterLinhasLivros(String coluna, boolean crescente) throws FileNotFoundException, IOException, ClassNotFoundException {
+        Vector<Livro> livros = obterLivros(coluna, crescente);
         Vector linhas = new Vector();
         
         // Montando as linhas
-        for(int i = 0; i < filmes.size(); i++){
-            Filme filme = filmes.get(i);
-            linhas.addElement(this.criarLinhaFilme(filme));
+        for(int i = 0; i < livros.size(); i++){
+            Livro livro = livros.get(i);
+            linhas.addElement(this.criarLinhaLivro(livro));
         }
         return linhas;
     }

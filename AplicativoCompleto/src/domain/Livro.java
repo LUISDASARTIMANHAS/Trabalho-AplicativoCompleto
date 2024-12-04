@@ -10,9 +10,9 @@ import java.io.Serializable;
 
 /**
  *
- * @author Giovany
+ * @author LUIS DAS ARTIMANHAS
  */
-public class Filme implements Serializable {
+public class Livro implements Serializable {
     private String codigo, nome, genero, produtora, datacompra;
 
     public String getCodigo() {

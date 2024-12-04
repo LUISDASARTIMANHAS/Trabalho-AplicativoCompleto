@@ -7,10 +7,10 @@ package dao;
 
 /**
  *
- * @author Giovany
+ * @author LUIS DAS ARTIMANHAS
  */
-public class FilmeFileInformation {
-    private static String nomeArquivo = "filme.txt";
+public class LivroFileInformation {
+    private static String nomeArquivo = "database.txt";
     private static String caminhoArquivo = "";
 
     public static String getCaminhoArquivo() {

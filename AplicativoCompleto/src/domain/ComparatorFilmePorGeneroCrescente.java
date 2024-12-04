@@ -9,10 +9,10 @@ import java.util.Comparator;
 
 /**
  *
- * @author Giovany
+ * @author LUIS DAS ARTIMANHAS
  */
-public class ComparatorFilmePorGeneroCrescente implements Comparator<Filme> {
-    public int compare(Filme o1, Filme o2) {
+public class ComparatorFilmePorGeneroCrescente implements Comparator<Livro> {
+    public int compare(Livro o1, Livro o2) {
         return o1.getGenero().compareTo(o2.getGenero());
     }
 

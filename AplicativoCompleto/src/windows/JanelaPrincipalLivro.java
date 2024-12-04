@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class JanelaPrincipalFilme extends JanelaVisualizarFilme {
+public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
 
     @Override
     protected void montarCabecalho() {
@@ -68,13 +68,13 @@ public class JanelaPrincipalFilme extends JanelaVisualizarFilme {
                 limparTabelaFilmes();
                 Vector dados = lerDados();
                 try {
-                    this.controladora.inserirNovoFilme(dados);
+                    this.controladora.inserirNovoLivro(dados);
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } // alterar
@@ -84,13 +84,13 @@ public class JanelaPrincipalFilme extends JanelaVisualizarFilme {
                 limparTabelaFilmes();
                 Vector dados = lerDados();
                 try {
-                    this.controladora.alterarFilme(dados);
+                    this.controladora.alterarLivro(dados);
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
             } // excluir
@@ -98,13 +98,13 @@ public class JanelaPrincipalFilme extends JanelaVisualizarFilme {
                 System.out.println("Digite o número da linha que deseja excluir: ");
                 this.controladora.setMarcador(leitorOpcao.nextInt());
                 try {
-                    this.controladora.excluirFilme();
+                    this.controladora.excluirLivro();
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalFilme.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
                 limparTabelaFilmes();
