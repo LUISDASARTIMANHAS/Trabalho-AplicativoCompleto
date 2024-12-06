@@ -33,6 +33,7 @@ public class JanelaVisualizarLivro {
             colunas.addElement("Genero");
             colunas.addElement("Editora");
             colunas.addElement("Data Compra");
+            colunas.addElement("Preço");
         }
 
         return colunas;

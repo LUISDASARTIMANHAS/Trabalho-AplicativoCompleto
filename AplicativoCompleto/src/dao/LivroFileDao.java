@@ -6,10 +6,16 @@ package dao;
 
 import domain.ComparatorLivroPorCodigoCrescente;
 import domain.ComparatorLivroPorCodigoDecrescente;
+import domain.ComparatorLivroPorDataCompraCrescente;
+import domain.ComparatorLivroPorDataCompraDecrescente;
+import domain.ComparatorLivroPorEditoraCrescente;
+import domain.ComparatorLivroPorEditoraDecrescente;
 import domain.ComparatorLivroPorGeneroCrescente;
 import domain.ComparatorLivroPorGeneroDecrescente;
 import domain.ComparatorLivroPorNomeCrescente;
 import domain.ComparatorLivroPorNomeDecrescente;
+import domain.ComparatorLivroPorPrecoCrescente;
+import domain.ComparatorLivroPorPrecoDecrescente;
 import domain.Livro;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -81,10 +87,16 @@ public class LivroFileDao {
             else Collections.sort(livros, new ComparatorLivroPorGeneroDecrescente());
         }
         else if (coluna.equals("editora")){
-            // Exercício - o aluno deve terminar
+            if (crescente) Collections.sort(livros, new ComparatorLivroPorEditoraCrescente());
+            else Collections.sort(livros, new ComparatorLivroPorEditoraDecrescente());
         }
         else if (coluna.equals("datacompra")){
-            // Exercício - o aluno deve terminar
+             if (crescente) Collections.sort(livros, new ComparatorLivroPorDataCompraCrescente());
+            else Collections.sort(livros, new ComparatorLivroPorDataCompraDecrescente());
+        }
+        else if (coluna.equals("preco")){
+             if (crescente) Collections.sort(livros, new ComparatorLivroPorPrecoCrescente());
+            else Collections.sort(livros, new ComparatorLivroPorPrecoDecrescente());
         }
         return livros;
     }

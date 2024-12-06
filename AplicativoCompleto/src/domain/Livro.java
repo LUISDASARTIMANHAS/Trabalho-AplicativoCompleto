@@ -13,30 +13,19 @@ import java.io.Serializable;
  * @author LUIS DAS ARTIMANHAS
  */
 public class Livro implements Serializable {
-    private String codigo, nome, genero, editora, datacompra;
+    private int codigo;
+    private String nome;
+    private String genero;
+    private String editora;
+    private String datacompra;
+    private double preco;
 
-    public String getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(String codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
-    }
-
-    public String getDatacompra() {
-        return datacompra;
-    }
-
-    public void setDatacompra(String datacompra) {
-        this.datacompra = datacompra;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
     }
 
     public String getNome() {
@@ -47,6 +36,14 @@ public class Livro implements Serializable {
         this.nome = nome;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
+
     public String getEditora() {
         return editora;
     }
@@ -55,4 +52,21 @@ public class Livro implements Serializable {
         this.editora = editora;
     }
 
+    public String getDatacompra() {
+        return datacompra;
+    }
+
+    public void setDatacompra(String datacompra) {
+        this.datacompra = datacompra;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
+    }
+    
+    
 }

@@ -11,9 +11,9 @@ import java.util.Comparator;
  *
  * @author LUIS DAS ARTIMANHAS
  */
-public class ComparatorLivroPorGeneroCrescente implements Comparator<Livro> {
+public class ComparatorLivroPorDataCompraDecrescente implements Comparator<Livro> {
     public int compare(Livro livro1, Livro livro2) {
-        return livro1.getGenero().compareTo(livro2.getGenero());
+        return ((-1) * livro1.getDatacompra().compareTo(livro2.getDatacompra()));
     }
 
 }

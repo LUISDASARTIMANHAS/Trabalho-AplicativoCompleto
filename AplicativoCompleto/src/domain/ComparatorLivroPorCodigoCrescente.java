@@ -12,7 +12,7 @@ import java.util.Comparator;
  * @author LUIS DAS ARTIMANHAS
  */
 public class ComparatorLivroPorCodigoCrescente implements Comparator<Livro> {
-    public int compare(Livro o1, Livro o2) {
-        return o1.getCodigo().compareTo(o2.getCodigo());
+    public int compare(Livro livro1, Livro livro2) {
+        return Integer.compare(livro1.getCodigo(), livro2.getCodigo());
     }
 }
