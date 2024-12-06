@@ -7,9 +7,9 @@ package dao;
 import domain.ComparatorLivroPorCodigoCrescente;
 import domain.ComparatorLivroPorCodigoDecrescente;
 import domain.ComparatorLivroPorGeneroCrescente;
+import domain.ComparatorLivroPorGeneroDecrescente;
 import domain.ComparatorLivroPorNomeCrescente;
 import domain.ComparatorLivroPorNomeDecrescente;
-import domain.ComparatorLivroPorGeneroDecrescente;
 import domain.Livro;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -80,7 +80,7 @@ public class LivroFileDao {
             if (crescente) Collections.sort(livros, new ComparatorLivroPorGeneroCrescente());
             else Collections.sort(livros, new ComparatorLivroPorGeneroDecrescente());
         }
-        else if (coluna.equals("produtora")){
+        else if (coluna.equals("editora")){
             // Exercício - o aluno deve terminar
         }
         else if (coluna.equals("datacompra")){

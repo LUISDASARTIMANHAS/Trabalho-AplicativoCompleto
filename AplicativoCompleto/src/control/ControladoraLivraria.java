@@ -24,8 +24,8 @@ public class ControladoraLivraria {
             return "nome";
         if (coluna.equals("Genero"))
             return "genero";
-        if (coluna.equals("Produtora"))
-            return "produtora";
+        if (coluna.equals("Editora"))
+            return "editora";
         if (coluna.equals("Data Compra"))
             return "datacompra";
         return "id";
@@ -39,7 +39,7 @@ public class ControladoraLivraria {
         livro.setCodigo(linha.get(0).toString());
         livro.setNome(linha.get(1).toString());
         livro.setGenero(linha.get(2).toString());
-        livro.setProdutora(linha.get(3).toString());
+        livro.setEditora(linha.get(3).toString());
         livro.setDatacompra(linha.get(4).toString());       
     }
     
@@ -48,7 +48,7 @@ public class ControladoraLivraria {
         linha.addElement(livro.getCodigo());
         linha.addElement(livro.getNome());
         linha.addElement(livro.getGenero());
-        linha.addElement(livro.getProdutora());
+        linha.addElement(livro.getEditora());
         linha.addElement(livro.getDatacompra());
         return linha;
     }

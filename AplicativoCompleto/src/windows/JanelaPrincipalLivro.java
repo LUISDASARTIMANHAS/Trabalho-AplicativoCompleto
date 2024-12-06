@@ -17,9 +17,9 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
         super.montarCabecalho();
         Vector colunas = this.obterNomeColunasTabela();
         int qtMenus = colunas.size() * 2;
-        System.out.println(" " + (qtMenus + 1) + ") Incluir Novo Filme");
-        System.out.println(" " + (qtMenus + 2) + ") Alterar Filme");
-        System.out.println(" " + (qtMenus + 3) + ") Excluir Filme");
+        System.out.println(" " + (qtMenus + 1) + ") Incluir Novo Livro");
+        System.out.println(" " + (qtMenus + 2) + ") Alterar Livro");
+        System.out.println(" " + (qtMenus + 3) + ") Excluir Livro");
     }
 
     private Vector lerDados() {
@@ -56,7 +56,7 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
                 break;
             } // ordenação
             else if (opcao <= qtMenus) {
-                limparTabelaFilmes();
+                limparTabelaLivros();
                 this.coluna = (String) colunas.get((opcao - 1) / 2);
                 if ((opcao % 2) == 1) {
                     this.crescente = true;
@@ -65,7 +65,7 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
                 }
             } // incluir
             else if (opcao == qtMenus + 1) {
-                limparTabelaFilmes();
+                limparTabelaLivros();
                 Vector dados = lerDados();
                 try {
                     this.controladora.inserirNovoLivro(dados);
@@ -81,7 +81,7 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
             else if (opcao == qtMenus + 2) {
                 System.out.println("Digite o número da linha que deseja alterar: ");
                 this.controladora.setMarcador(leitorOpcao.nextInt());
-                limparTabelaFilmes();
+                limparTabelaLivros();
                 Vector dados = lerDados();
                 try {
                     this.controladora.alterarLivro(dados);
@@ -107,7 +107,7 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
                     Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
                 }
 
-                limparTabelaFilmes();
+                limparTabelaLivros();
 
             } else {
                 System.out.println("Falha GERAL");

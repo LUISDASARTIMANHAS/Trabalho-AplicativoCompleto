@@ -4,12 +4,13 @@
  */
 package windows;
 
-import control.*;
+import control.ControladoraLivraria;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.*;
 
 
 /**
@@ -30,20 +31,20 @@ public class JanelaVisualizarLivro {
             colunas.addElement("Código");
             colunas.addElement("Nome");
             colunas.addElement("Genero");
-            colunas.addElement("Produtora");
+            colunas.addElement("Editora");
             colunas.addElement("Data Compra");
         }
 
         return colunas;
     }
 
-    protected void limparTabelaFilmes() {
+    protected void limparTabelaLivros() {
         for (int i = 0; i < 25; i++) {
             System.out.println();
         }
     }
 
-    protected void preencherTabelaFilmes() {
+    protected void preencherTabelaLivros() {
         try {
             Vector linhas;
             linhas = controladora.obterLinhasLivros(coluna, crescente);
@@ -102,8 +103,8 @@ public class JanelaVisualizarLivro {
         System.out.println("===========================================================================================================");
         this.montarCabecalho();
         System.out.println("===========================================================================================================");
-        // Preenchendo a Tabela de Filmes
-        this.preencherTabelaFilmes();
+        // Preenchendo a Tabela de Livros
+        this.preencherTabelaLivros();
     }
 
     public JanelaVisualizarLivro() {
@@ -122,7 +123,7 @@ public class JanelaVisualizarLivro {
 
             opcao = leitorOpcao.nextInt();
             
-            limparTabelaFilmes();
+            limparTabelaLivros();
             // sair
             if (opcao == 0) {
                 break;

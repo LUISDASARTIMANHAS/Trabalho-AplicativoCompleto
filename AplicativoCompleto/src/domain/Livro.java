@@ -13,7 +13,7 @@ import java.io.Serializable;
  * @author LUIS DAS ARTIMANHAS
  */
 public class Livro implements Serializable {
-    private String codigo, nome, genero, produtora, datacompra;
+    private String codigo, nome, genero, editora, datacompra;
 
     public String getCodigo() {
         return codigo;
@@ -47,12 +47,12 @@ public class Livro implements Serializable {
         this.nome = nome;
     }
 
-    public String getProdutora() {
-        return produtora;
+    public String getEditora() {
+        return editora;
     }
 
-    public void setProdutora(String produtora) {
-        this.produtora = produtora;
+    public void setEditora(String editora) {
+        this.editora = editora;
     }
 
 }
