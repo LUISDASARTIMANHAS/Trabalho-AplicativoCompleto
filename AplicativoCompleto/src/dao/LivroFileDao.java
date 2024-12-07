@@ -75,28 +75,46 @@ public class LivroFileDao {
     public Vector<Livro> obterLivros(String coluna, boolean crescente) throws FileNotFoundException, IOException, ClassNotFoundException {
         Vector<Livro> livros = this.obterLivros();
         if (coluna.equals("codigo")){
-            if (crescente) Collections.sort(livros, new ComparatorLivroPorCodigoCrescente());
-            else Collections.sort(livros, new ComparatorLivroPorCodigoDecrescente());
+            if (crescente) {
+                Collections.sort(livros, new ComparatorLivroPorCodigoCrescente());
+            } else {
+                Collections.sort(livros, new ComparatorLivroPorCodigoDecrescente());
+            }
         }
         else if (coluna.equals("nome")){
-            if (crescente) Collections.sort(livros, new ComparatorLivroPorNomeCrescente());
-            else Collections.sort(livros, new ComparatorLivroPorNomeDecrescente());
+            if (crescente) {
+                Collections.sort(livros, new ComparatorLivroPorNomeCrescente());
+            } else {
+                Collections.sort(livros, new ComparatorLivroPorNomeDecrescente());
+            }
         }
         else if (coluna.equals("genero")){
-            if (crescente) Collections.sort(livros, new ComparatorLivroPorGeneroCrescente());
-            else Collections.sort(livros, new ComparatorLivroPorGeneroDecrescente());
+            if (crescente) {
+                Collections.sort(livros, new ComparatorLivroPorGeneroCrescente());
+            } else {
+                Collections.sort(livros, new ComparatorLivroPorGeneroDecrescente());
+            }
         }
         else if (coluna.equals("editora")){
-            if (crescente) Collections.sort(livros, new ComparatorLivroPorEditoraCrescente());
-            else Collections.sort(livros, new ComparatorLivroPorEditoraDecrescente());
+            if (crescente) {
+                Collections.sort(livros, new ComparatorLivroPorEditoraCrescente());
+            } else {
+                Collections.sort(livros, new ComparatorLivroPorEditoraDecrescente());
+            }
         }
         else if (coluna.equals("datacompra")){
-             if (crescente) Collections.sort(livros, new ComparatorLivroPorDataCompraCrescente());
-            else Collections.sort(livros, new ComparatorLivroPorDataCompraDecrescente());
+             if (crescente) {
+                 Collections.sort(livros, new ComparatorLivroPorDataCompraCrescente());
+             } else {
+                 Collections.sort(livros, new ComparatorLivroPorDataCompraDecrescente());
+             }
         }
         else if (coluna.equals("preco")){
-             if (crescente) Collections.sort(livros, new ComparatorLivroPorPrecoCrescente());
-            else Collections.sort(livros, new ComparatorLivroPorPrecoDecrescente());
+             if (crescente) {
+                 Collections.sort(livros, new ComparatorLivroPorPrecoCrescente());
+             } else {
+                 Collections.sort(livros, new ComparatorLivroPorPrecoDecrescente());
+             }
         }
         return livros;
     }
