@@ -66,7 +66,7 @@ public class JanelaVisualizarLivro {
                 for (int j = 0; j < colunas.size() - 1; j++) {
                     System.out.print(linha.get(j) + "   -   ");
                 }
-                String valor = (String) linha.get(colunas.size() - 1);
+                String valor = (String) linha.get(colunas.size() - 1).toString();
                 if (valor.equals("")) {
                     System.out.print(" null ");
                 } else {

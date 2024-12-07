@@ -43,32 +43,20 @@ public class ControladoraLivraria {
     }
 
     private void atualizarLivro(Livro livro, Vector linha) {
-        
-        if (linha.get(0) instanceof String) {
-            livro.setCodigo(
-                    Integer.parseInt(
-                          (String)  linha.get(0)
-                    )
-            );
-            
-        } else {
-            livro.setCodigo((int) linha.get(0)
-            );
-        }
+        livro.setCodigo(
+                Integer.parseInt(
+                        linha.get(0).toString()
+                )
+        );
         livro.setNome(linha.get(1).toString());
         livro.setGenero(linha.get(2).toString());
         livro.setEditora(linha.get(3).toString());
         livro.setDatacompra(linha.get(4).toString());
-        if (linha.get(5) instanceof String) {
-            livro.setPreco(
-                    Double.parseDouble(
-                           (String) linha.get(0)
-                    )
-            );
-        } else {
-            livro.setPreco((double) linha.get(5)
-            );
-        }
+        livro.setPreco(
+                Double.parseDouble(
+                        linha.get(5).toString()
+                )
+        );
     }
 
     private Vector criarLinhaLivro(Livro livro) {
@@ -93,7 +81,7 @@ public class ControladoraLivraria {
         this.marcador = marcador;
     }
 
-    public void alterarLivro(Vector linha) throws FileNotFoundException, IOException, ClassNotFoundException {
+    public void alterarLivro(Vector linha) throws ArrayIndexOutOfBoundsException ,FileNotFoundException, IOException, ClassNotFoundException {
         Livro livro = Livros.get(marcador);
         this.atualizarLivro(livro, linha);
         LivrosDao.salvarLivros(this.Livros);

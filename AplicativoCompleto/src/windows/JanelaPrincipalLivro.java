@@ -6,9 +6,11 @@ package windows;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.*;
+import java.util.Scanner;
+import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+
 
 public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
 
@@ -70,11 +72,13 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
                 try {
                     this.controladora.inserirNovoLivro(dados);
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "ARQUIVO NÃO ENCONTRADO", ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "FALHA NA ENTRADA DE DADOS", ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "CLASSE NÃO ENCONTRADA", ex);
+                } catch (ArrayIndexOutOfBoundsException ex) {
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "ERRO AO ACESSAR REGIÃO DE MEMORIA NÃO DISPONIVEL");
                 }
 
             } // alterar
@@ -86,11 +90,13 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
                 try {
                     this.controladora.alterarLivro(dados);
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "ARQUIVO NÃO ENCONTRADO", ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "FALHA NA ENTRADA DE DADOS", ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "CLASSE NÃO ENCONTRADA", ex);
+                } catch (ArrayIndexOutOfBoundsException ex) {
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "ERRO AO ACESSAR REGIÃO DE MEMORIA NÃO DISPONIVEL");
                 }
 
             } // excluir
@@ -100,11 +106,13 @@ public class JanelaPrincipalLivro extends JanelaVisualizarLivro {
                 try {
                     this.controladora.excluirLivro();
                 } catch (FileNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "ARQUIVO NÃO ENCONTRADO", ex);
                 } catch (IOException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "FALHA NA ENTRADA DE DADOS", ex);
                 } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "CLASSE NÃO ENCONTRADA", ex);
+                } catch (ArrayIndexOutOfBoundsException ex) {
+                    Logger.getLogger(JanelaPrincipalLivro.class.getName()).log(Level.SEVERE, "ERRO AO ACESSAR REGIÃO DE MEMORIA NÃO DISPONIVEL");
                 }
 
                 limparTabelaLivros();
