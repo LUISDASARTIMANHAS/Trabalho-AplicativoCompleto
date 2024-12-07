@@ -13,7 +13,7 @@ import java.util.Comparator;
  */
 public class ComparatorLivroPorPrecoDecrescente implements Comparator<Livro> {
     public int compare(Livro livro1, Livro livro2) {
-        return (-1) * Double.compare(livro1.getPreco(), livro2.getPreco());
+        return (-1) * (Double.compare(livro1.getPreco(), livro2.getPreco()));
     }
 
 }
